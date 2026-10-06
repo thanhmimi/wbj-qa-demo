@@ -1,0 +1,8 @@
+playwright>=1.50
+pytest>=8.0
+opencv-python-headless>=4.9
+numpy>=1.26
+requests>=2.31
+# mobile builds (Android/iOS) only — image tier on devices:
+# airtest>=1.3
+# pocoui>=1.0

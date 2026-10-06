@@ -1,0 +1,39 @@
+{
+  "outcome": "passed",
+  "timing": {
+    "page_dom_s": 2.57,
+    "frame_attached_s": 3.68,
+    "game_ready_s": 9.34,
+    "ads_closed": 0,
+    "launch_retries": 0,
+    "via_dashboard": false
+  },
+  "snapshot": {
+    "fen": "x/1b7/x/x/x/x/x/x/x l e2-v,b e3-v,b",
+    "score": 1,
+    "bestScore": 0,
+    "targetScore": 100,
+    "levelIndex": 0,
+    "tutorialState": "stopped",
+    "openScreens": [],
+    "isGameOver": false,
+    "fps": 60.3
+  },
+  "drag_retries": 0,
+  "console_errors": [
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "blocked_requests": 12,
+  "captured_at": "2026-10-06 00:18:12"
+}

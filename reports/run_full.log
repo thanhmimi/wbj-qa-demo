@@ -1,0 +1,43 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0 -- /Users/leon/Downloads/sun_studio_assessment/wbj-qa-demo/.venv/bin/python
+rootdir: /Users/leon/Downloads/sun_studio_assessment/wbj-qa-demo
+configfile: pytest.ini
+testpaths: tests
+collecting ... collected 32 items
+
+tests/test_01_smoke.py::test_game_loads_to_game_scene_within_budget PASSED [  3%]
+tests/test_01_smoke.py::test_canvas_actually_renders PASSED              [  6%]
+tests/test_01_smoke.py::test_no_uncaught_js_errors_during_launch_and_first_moves PASSED [  9%]
+tests/test_01_smoke.py::test_test_traffic_never_reaches_analytics_or_ads PASSED [ 12%]
+tests/test_02_tutorial.py::test_new_player_starts_in_tutorial PASSED     [ 15%]
+tests/test_02_tutorial.py::test_complete_tutorial_with_real_drags PASSED [ 18%]
+tests/test_03_board_rules.py::test_placement_fills_exact_footprint[square_3] PASSED [ 21%]
+tests/test_03_board_rules.py::test_placement_fills_exact_footprint[l_top] PASSED [ 25%]
+tests/test_03_board_rules.py::test_placement_fills_exact_footprint[t_top] PASSED [ 28%]
+tests/test_03_board_rules.py::test_placement_fills_exact_footprint[plus] PASSED [ 31%]
+tests/test_03_board_rules.py::test_placement_fills_exact_footprint[line_5_v] PASSED [ 34%]
+tests/test_03_board_rules.py::test_drop_on_occupied_cells_is_rejected PASSED [ 37%]
+tests/test_03_board_rules.py::test_drop_outside_the_board_is_rejected PASSED [ 40%]
+tests/test_03_board_rules.py::test_line_and_box_clears[row] PASSED       [ 43%]
+tests/test_03_board_rules.py::test_line_and_box_clears[column] PASSED    [ 46%]
+tests/test_03_board_rules.py::test_line_and_box_clears[box] PASSED       [ 50%]
+tests/test_03_board_rules.py::test_line_and_box_clears[row+column] PASSED [ 53%]
+tests/test_03_board_rules.py::test_new_hand_is_dealt_only_after_all_three_pieces_are_used PASSED [ 56%]
+tests/test_04_scoring.py::test_placement_scores_one_point_per_cell[piece0-1] PASSED [ 59%]
+tests/test_04_scoring.py::test_placement_scores_one_point_per_cell[piece1-4] PASSED [ 62%]
+tests/test_04_scoring.py::test_placement_scores_one_point_per_cell[piece2-9] PASSED [ 65%]
+tests/test_04_scoring.py::test_placement_scores_one_point_per_cell[piece3-5] PASSED [ 68%]
+tests/test_04_scoring.py::test_clear_bonus_and_streak PASSED             [ 71%]
+tests/test_04_scoring.py::test_double_clear_bonus PASSED                 [ 75%]
+tests/test_04_scoring.py::test_first_target_is_100_and_reaching_it_opens_score_reached PASSED [ 78%]
+tests/test_05_game_over_ads.py::test_no_fit_offers_second_chance_with_countdown PASSED [ 81%]
+tests/test_05_game_over_ads.py::test_ad_unavailable_never_blocks_the_player PASSED [ 84%]
+tests/test_05_game_over_ads.py::test_game_over_screen_shows_final_score PASSED [ 87%]
+tests/test_05_game_over_ads.py::test_play_again_by_image_starts_fresh_game PASSED [ 90%]
+tests/test_06_persistence.py::test_reload_resumes_board_score_and_hand PASSED [ 93%]
+tests/test_07_performance.py::test_fps_and_memory_during_play PASSED     [ 96%]
+tests/test_07_performance.py::test_game_payload_size PASSED              [100%]
+
+- generated xml file: /Users/leon/Downloads/sun_studio_assessment/wbj-qa-demo/reports/junit.xml -
+======================== 32 passed in 582.14s (0:09:42) ========================
+report: /Users/leon/Downloads/sun_studio_assessment/wbj-qa-demo/reports/index.html  (32 passed, 0 failed)

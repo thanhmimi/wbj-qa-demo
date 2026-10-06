@@ -1,0 +1,431 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WBJ Automation Run</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#1d1b16;--mut:#6b6559;--line:#e4dfd3;--ok:#1f8a4c;--bad:#c0392b;--warn:#b7791f;--acc:#8a5a2b}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#16140f;--card:#201d17;--ink:#f1ece2;--mut:#a59d8d;--line:#352f25}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 -apple-system,Segoe UI,Inter,Roboto,sans-serif}
+.wrap{max-width:1280px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:22px;margin:0 0 4px} h2{font-size:15px;margin:28px 0 10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+.sub{color:var(--mut);font-size:12px} .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace} .small{font-size:11px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px} .kpi b{font-size:26px;display:block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px} @media(max-width:800px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{font-size:11px;text-transform:uppercase;color:var(--mut);letter-spacing:.05em}
+.num{text-align:right;font-variant-numeric:tabular-nums} .nw{white-space:nowrap} .ev{max-width:230px;word-break:break-all} img{width:48px;border-radius:6px;border:1px solid var(--line)}
+.pill{font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;color:#fff} .pill.passed{background:var(--ok)} .pill.failed,.pill.error{background:var(--bad)} .pill.skipped{background:var(--warn)}
+.err{color:var(--bad);font-size:12px;margin-top:4px;white-space:pre-wrap} .scroll{overflow-x:auto}
+.ladder{display:flex;gap:8px;flex-wrap:wrap} .step{flex:1;min-width:220px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px} .step b{color:var(--acc)}
+</style></head><body><div class="wrap">
+<h1>Wood Block Journey · Automation Run</h1>
+<div class="sub">Sun.Studio · HTML5 build on Playhop/Yandex (same bundle as FB Instant) · Python + Pytest + Playwright · generated 2026-10-06 00:23</div>
+<div class="kpis">
+ <div class="kpi"><b>32</b>tests executed</div>
+ <div class="kpi"><b style="color:var(--ok)">100%</b>pass rate (32 passed)</div>
+ <div class="kpi"><b style="color:var(--bad)">0</b>failed / error</div>
+ <div class="kpi"><b>9.7 min</b>wall time</div>
+ <div class="kpi"><b>23/47</b>TCs covered by this run</div>
+ <div class="kpi"><b>23 · 21 · 3</b>automated · candidate · manual</div>
+</div>
+<h2>Automation ladder used on this canvas game</h2>
+<div class="ladder">
+ <div class="step"><b>1 · Bridge</b><br>Read/arrange game state (board FEN, score, hand, screens). Deterministic setup instead of RNG. Shim today; dev-owned contract in-house.</div>
+ <div class="step"><b>2 · Scene tree</b><br>Phaser display list read like Poco: screen names, text nodes, cell geometry. Real pointer drags with closed-loop correction.</div>
+ <div class="step"><b>3 · Image</b><br>OpenCV template match (Airtest technique) when nothing else is reachable: PLAY button, titles, blank-canvas check.</div>
+</div>
+<div class="grid2">
+ <div><h2>Result by tier</h2><table><tr><th>Tier</th><th class="num">Pass</th><th class="num">Fail</th></tr><tr><td>bridge</td><td class='num'>25</td><td class='num'>0</td></tr><tr><td>image</td><td class='num'>2</td><td class='num'>0</td></tr><tr><td>scene</td><td class='num'>5</td><td class='num'>0</td></tr></table></div>
+ <div><h2>Coverage by layer (test-case repository)</h2><table><tr><th>Layer</th><th class="num">TCs</th><th class="num">Automated</th></tr><tr><td>L1 Core rules</td><td class='num'>4</td><td class='num'>4</td></tr><tr><td>L2 State</td><td class='num'>2</td><td class='num'>2</td></tr><tr><td>L3 Scoring</td><td class='num'>3</td><td class='num'>3</td></tr><tr><td>L4 UI</td><td class='num'>6</td><td class='num'>3</td></tr><tr><td>L5 Input</td><td class='num'>2</td><td class='num'>2</td></tr><tr><td>L6 Persistence</td><td class='num'>5</td><td class='num'>2</td></tr><tr><td>L7 Ads</td><td class='num'>7</td><td class='num'>2</td></tr><tr><td>L8 Analytics</td><td class='num'>3</td><td class='num'>1</td></tr><tr><td>L9 Platform</td><td class='num'>4</td><td class='num'>1</td></tr><tr><td>L10 Performance</td><td class='num'>4</td><td class='num'>3</td></tr><tr><td>L11 Compatibility</td><td class='num'>3</td><td class='num'>0</td></tr><tr><td>L12 L10n &amp; a11y</td><td class='num'>1</td><td class='num'>0</td></tr><tr><td>L13 Experience</td><td class='num'>3</td><td class='num'>0</td></tr></table></div>
+</div>
+<h2>Test results</h2>
+<div class="scroll"><table>
+<tr><th>Status</th><th>TC ID</th><th>Test</th><th>Layer</th><th>Tier</th><th>Prio</th><th class="num">Time</th><th>Evidence</th><th>Shot</th></tr>
+
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-001</td>
+  <td><b>Game loads to playable scene within 15 s</b><div class="sub mono">test_01_smoke::test_game_loads_to_game_scene_within_budget</div>
+      </td>
+  <td>L10 Performance</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">9.5s</td>
+  <td class="mono small ev">score=- · ready=8.9s · fps=60.3<br>x/x/x/x/bbbb1bbbb/x/x/x/x l s1,b</td>
+  <td><a href="evidence/tests_test_01_smoke_py_test_game_loads_to_game_scene_within_budget/final.png" target="_blank"><img src="evidence/tests_test_01_smoke_py_test_game_loads_to_game_scene_within_budget/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-002</td>
+  <td><b>Canvas renders (not blank)</b><div class="sub mono">test_01_smoke::test_canvas_actually_renders</div>
+      </td>
+  <td>L4 UI</td>
+  <td>image</td>
+  <td>P0</td>
+  <td class="num">9.0s</td>
+  <td class="mono small ev">score=- · ready=8.65s · fps=60.5<br>x/x/x/x/bbbb1bbbb/x/x/x/x l s1,b</td>
+  <td><a href="evidence/tests_test_01_smoke_py_test_canvas_actually_renders/final.png" target="_blank"><img src="evidence/tests_test_01_smoke_py_test_canvas_actually_renders/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-003</td>
+  <td><b>No uncaught JS errors on launch and first moves</b><div class="sub mono">test_01_smoke::test_no_uncaught_js_errors_during_launch_and_first_moves</div>
+      </td>
+  <td>L9 Platform</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">18.5s</td>
+  <td class="mono small ev">score=11 · ready=8.74s · fps=60.6<br>bbbbbbb2/bb4b2/6b2/x/x/x/x/x/x l e2-h,b l1-dl,b u_piece-dr,b</td>
+  <td><a href="evidence/tests_test_01_smoke_py_test_no_uncaught_js_errors_during_launch_and_first_moves/final.png" target="_blank"><img src="evidence/tests_test_01_smoke_py_test_no_uncaught_js_errors_during_launch_and_first_moves/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-062</td>
+  <td><b>Test traffic does not reach production analytics</b><div class="sub mono">test_01_smoke::test_test_traffic_never_reaches_analytics_or_ads</div>
+      </td>
+  <td>L8 Analytics</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">11.9s</td>
+  <td class="mono small ev">score=0 · ready=9.37s · fps=60.3<br>x/x/x/x/x/x/x/x/x l e2-h,b e3-v,b e2-v,b</td>
+  <td><a href="evidence/tests_test_01_smoke_py_test_test_traffic_never_reaches_analytics_or_ads/final.png" target="_blank"><img src="evidence/tests_test_01_smoke_py_test_test_traffic_never_reaches_analytics_or_ads/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-010</td>
+  <td><b>New player starts in the tutorial, step 1</b><div class="sub mono">test_02_tutorial::test_new_player_starts_in_tutorial</div>
+      </td>
+  <td>L2 State</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">9.4s</td>
+  <td class="mono small ev">score=- · ready=9.29s · fps=60.2<br>x/x/x/x/bbbb1bbbb/x/x/x/x l s1,b</td>
+  <td><a href="evidence/tests_test_02_tutorial_py_test_new_player_starts_in_tutorial/final.png" target="_blank"><img src="evidence/tests_test_02_tutorial_py_test_new_player_starts_in_tutorial/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-011</td>
+  <td><b>Complete all 4 tutorial steps with real drags</b><div class="sub mono">test_02_tutorial::test_complete_tutorial_with_real_drags</div>
+      </td>
+  <td>L5 Input</td>
+  <td>scene</td>
+  <td>P0</td>
+  <td class="num">21.3s</td>
+  <td class="mono small ev">score=0 · ready=8.93s · fps=60.7<br>x/x/x/x/x/x/x/x/x l s2,b e4-h,b e3-h,b</td>
+  <td><a href="evidence/tests_test_02_tutorial_py_test_complete_tutorial_with_real_drags/final.png" target="_blank"><img src="evidence/tests_test_02_tutorial_py_test_complete_tutorial_with_real_drags/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-020</td>
+  <td><b>Placement fills the exact footprint (5 piece families)</b><div class="sub mono">test_03_board_rules::test_placement_fills_exact_footprint[square_3]</div>
+      </td>
+  <td>L1 Core rules</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">14.9s</td>
+  <td class="mono small ev">score=9 · ready=9.61s · fps=59.9<br>x/x/2bbb4/2bbb4/2bbb4/x/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_placement_fills_exact_footprint_square_3_/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_placement_fills_exact_footprint_square_3_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-020</td>
+  <td><b>Placement fills the exact footprint (5 piece families)</b><div class="sub mono">test_03_board_rules::test_placement_fills_exact_footprint[l_top]</div>
+      </td>
+  <td>L1 Core rules</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">14.5s</td>
+  <td class="mono small ev">score=4 · ready=9.1s · fps=60.1<br>x/x/2b6/2b6/2bb5/x/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_placement_fills_exact_footprint_l_top_/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_placement_fills_exact_footprint_l_top_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-020</td>
+  <td><b>Placement fills the exact footprint (5 piece families)</b><div class="sub mono">test_03_board_rules::test_placement_fills_exact_footprint[t_top]</div>
+      </td>
+  <td>L1 Core rules</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">14.3s</td>
+  <td class="mono small ev">score=5 · ready=9.02s · fps=60.4<br>x/x/2b6/2b6/1bbb5/x/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_placement_fills_exact_footprint_t_top_/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_placement_fills_exact_footprint_t_top_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-020</td>
+  <td><b>Placement fills the exact footprint (5 piece families)</b><div class="sub mono">test_03_board_rules::test_placement_fills_exact_footprint[plus]</div>
+      </td>
+  <td>L1 Core rules</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">14.4s</td>
+  <td class="mono small ev">score=5 · ready=9.16s · fps=60.7<br>x/x/2b6/1bbb5/2b6/x/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_placement_fills_exact_footprint_plus_/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_placement_fills_exact_footprint_plus_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-020</td>
+  <td><b>Placement fills the exact footprint (5 piece families)</b><div class="sub mono">test_03_board_rules::test_placement_fills_exact_footprint[line_5_v]</div>
+      </td>
+  <td>L1 Core rules</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">14.2s</td>
+  <td class="mono small ev">score=5 · ready=8.81s · fps=60.2<br>x/x/2b6/2b6/2b6/2b6/2b6/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_placement_fills_exact_footprint_line_5_v_/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_placement_fills_exact_footprint_line_5_v_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-021</td>
+  <td><b>Drop on occupied cells is rejected</b><div class="sub mono">test_03_board_rules::test_drop_on_occupied_cells_is_rejected</div>
+      </td>
+  <td>L1 Core rules</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">15.1s</td>
+  <td class="mono small ev">score=0 · ready=10.76s · fps=59.9<br>x/x/4b4/x/x/x/x/x/x l s3,b e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_drop_on_occupied_cells_is_rejected/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_drop_on_occupied_cells_is_rejected/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-022</td>
+  <td><b>Drop outside the board is rejected</b><div class="sub mono">test_03_board_rules::test_drop_outside_the_board_is_rejected</div>
+      </td>
+  <td>L5 Input</td>
+  <td>bridge</td>
+  <td>P1</td>
+  <td class="num">13.3s</td>
+  <td class="mono small ev">score=0 · ready=9.01s · fps=60.4<br>x/x/x/x/x/x/x/x/x l e5-h,b e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_drop_outside_the_board_is_rejected/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_drop_outside_the_board_is_rejected/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-023</td>
+  <td><b>Row / column / 3×3 box / row+column clear</b><div class="sub mono">test_03_board_rules::test_line_and_box_clears[row]</div>
+      </td>
+  <td>L1 Core rules</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">14.4s</td>
+  <td class="mono small ev">score=29 · ready=9.12s · fps=60.9<br>x/x/x/x/x/x/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_line_and_box_clears_row_/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_line_and_box_clears_row_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-023</td>
+  <td><b>Row / column / 3×3 box / row+column clear</b><div class="sub mono">test_03_board_rules::test_line_and_box_clears[column]</div>
+      </td>
+  <td>L1 Core rules</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">14.0s</td>
+  <td class="mono small ev">score=29 · ready=8.71s · fps=60.4<br>x/x/x/x/x/x/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_line_and_box_clears_column_/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_line_and_box_clears_column_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-023</td>
+  <td><b>Row / column / 3×3 box / row+column clear</b><div class="sub mono">test_03_board_rules::test_line_and_box_clears[box]</div>
+      </td>
+  <td>L1 Core rules</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">14.9s</td>
+  <td class="mono small ev">score=29 · ready=9.6s · fps=60.6<br>x/x/x/x/x/x/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_line_and_box_clears_box_/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_line_and_box_clears_box_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-023</td>
+  <td><b>Row / column / 3×3 box / row+column clear</b><div class="sub mono">test_03_board_rules::test_line_and_box_clears[row+column]</div>
+      </td>
+  <td>L1 Core rules</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">15.3s</td>
+  <td class="mono small ev">score=47 · ready=10.04s · fps=60.6<br>x/x/x/x/x/x/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_line_and_box_clears_row_column_/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_line_and_box_clears_row_column_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-024</td>
+  <td><b>New hand only after all 3 pieces are used</b><div class="sub mono">test_03_board_rules::test_new_hand_is_dealt_only_after_all_three_pieces_are_used</div>
+      </td>
+  <td>L1 Core rules</td>
+  <td>bridge</td>
+  <td>P1</td>
+  <td class="num">19.9s</td>
+  <td class="mono small ev">score=7 · ready=9.22s · fps=60.5<br>b7b/8b/x/x/x/x/x/bb7/bb7 l l1-dl,b s2,b e2-h,b</td>
+  <td><a href="evidence/tests_test_03_board_rules_py_test_new_hand_is_dealt_only_after_all_three_pieces_are_used/final.png" target="_blank"><img src="evidence/tests_test_03_board_rules_py_test_new_hand_is_dealt_only_after_all_three_pieces_are_used/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-030</td>
+  <td><b>Placement scores +1 per cell</b><div class="sub mono">test_04_scoring::test_placement_scores_one_point_per_cell[piece0-1]</div>
+      </td>
+  <td>L3 Scoring</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">14.6s</td>
+  <td class="mono small ev">score=1 · ready=9.34s · fps=60.3<br>x/1b7/x/x/x/x/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_04_scoring_py_test_placement_scores_one_point_per_cell_piece0-1_/final.png" target="_blank"><img src="evidence/tests_test_04_scoring_py_test_placement_scores_one_point_per_cell_piece0-1_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-030</td>
+  <td><b>Placement scores +1 per cell</b><div class="sub mono">test_04_scoring::test_placement_scores_one_point_per_cell[piece1-4]</div>
+      </td>
+  <td>L3 Scoring</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">13.9s</td>
+  <td class="mono small ev">score=4 · ready=8.68s · fps=60.5<br>x/1bb6/1bb6/x/x/x/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_04_scoring_py_test_placement_scores_one_point_per_cell_piece1-4_/final.png" target="_blank"><img src="evidence/tests_test_04_scoring_py_test_placement_scores_one_point_per_cell_piece1-4_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-030</td>
+  <td><b>Placement scores +1 per cell</b><div class="sub mono">test_04_scoring::test_placement_scores_one_point_per_cell[piece2-9]</div>
+      </td>
+  <td>L3 Scoring</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">14.0s</td>
+  <td class="mono small ev">score=9 · ready=8.62s · fps=60.6<br>x/1bbb5/1bbb5/1bbb5/x/x/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_04_scoring_py_test_placement_scores_one_point_per_cell_piece2-9_/final.png" target="_blank"><img src="evidence/tests_test_04_scoring_py_test_placement_scores_one_point_per_cell_piece2-9_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-030</td>
+  <td><b>Placement scores +1 per cell</b><div class="sub mono">test_04_scoring::test_placement_scores_one_point_per_cell[piece3-5]</div>
+      </td>
+  <td>L3 Scoring</td>
+  <td>bridge</td>
+  <td>P0</td>
+  <td class="num">14.5s</td>
+  <td class="mono small ev">score=5 · ready=9.16s · fps=60.5<br>x/1b7/1b7/1b7/1b7/1b7/x/x/x l e2-v,b e3-v,b</td>
+  <td><a href="evidence/tests_test_04_scoring_py_test_placement_scores_one_point_per_cell_piece3-5_/final.png" target="_blank"><img src="evidence/tests_test_04_scoring_py_test_placement_scores_one_point_per_cell_piece3-5_/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-031</td>
+  <td><b>Clear bonus and streak, streak reset</b><div class="sub mono">test_04_scoring::test_clear_bonus_and_streak</div>
+      </td>
+  <td>L3 Scoring</td>
+  <td>bridge</td>
+  <td>P1</td>
+  <td class="num">19.1s</td>
+  <td class="mono small ev">score=73 · ready=8.98s · fps=60.6<br>4bb3/4bb3/x/x/x/x/x/x/x l e4-v,b e2-h,b l1-db,b</td>
+  <td><a href="evidence/tests_test_04_scoring_py_test_clear_bonus_and_streak/final.png" target="_blank"><img src="evidence/tests_test_04_scoring_py_test_clear_bonus_and_streak/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-032</td>
+  <td><b>Double clear bonus</b><div class="sub mono">test_04_scoring::test_double_clear_bonus</div>
+      </td>
+  <td>L3 Scoring</td>
+  <td>bridge</td>
+  <td>P1</td>
+  <td class="num">13.9s</td>
+  <td class="mono small ev">score=47 · ready=8.68s · fps=60.7<br>x/x/x/x/x/x/x/x/x l e2-v,b s2,b</td>
+  <td><a href="evidence/tests_test_04_scoring_py_test_double_clear_bonus/final.png" target="_blank"><img src="evidence/tests_test_04_scoring_py_test_double_clear_bonus/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-033</td>
+  <td><b>Reaching target 100 opens Score Reached; next target 250</b><div class="sub mono">test_04_scoring::test_first_target_is_100_and_reaching_it_opens_score_reached</div>
+      </td>
+  <td>L2 State</td>
+  <td>bridge</td>
+  <td>P1</td>
+  <td class="num">27.6s</td>
+  <td class="mono small ev">score=104 · ready=8.66s · fps=60.3<br>x/x/x/x/x/x/x/x/x l e2-v,b s2,b</td>
+  <td><a href="evidence/tests_test_04_scoring_py_test_first_target_is_100_and_reaching_it_opens_score_reached/final.png" target="_blank"><img src="evidence/tests_test_04_scoring_py_test_first_target_is_100_and_reaching_it_opens_score_reached/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-040</td>
+  <td><b>No fit → Second Chance with countdown</b><div class="sub mono">test_05_game_over_ads::test_no_fit_offers_second_chance_with_countdown</div>
+      </td>
+  <td>L7 Ads</td>
+  <td>scene</td>
+  <td>P0</td>
+  <td class="num">19.5s</td>
+  <td class="mono small ev">score=1 · ready=8.89s · fps=60.8<br>bbbbb1bbb/bb1bbbb1b/1bbb1bbbb/bb1bbb1bb/bbbb1bbb1/b1bbbb1bb/</td>
+  <td><a href="evidence/tests_test_05_game_over_ads_py_test_no_fit_offers_second_chance_with_countdown/final.png" target="_blank"><img src="evidence/tests_test_05_game_over_ads_py_test_no_fit_offers_second_chance_with_countdown/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-041</td>
+  <td><b>Ad unavailable never blocks the player</b><div class="sub mono">test_05_game_over_ads::test_ad_unavailable_never_blocks_the_player</div>
+      </td>
+  <td>L7 Ads</td>
+  <td>scene</td>
+  <td>P0</td>
+  <td class="num">34.0s</td>
+  <td class="mono small ev">score=1 · ready=9.22s · fps=60.4<br>bbbbb1bbb/bb1bbbb1b/1bbb1bbbb/bb1bbb1bb/bbbb1bbb1/b1bbbb1bb/</td>
+  <td><a href="evidence/tests_test_05_game_over_ads_py_test_ad_unavailable_never_blocks_the_player/final.png" target="_blank"><img src="evidence/tests_test_05_game_over_ads_py_test_ad_unavailable_never_blocks_the_player/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-042</td>
+  <td><b>Game Over panel shows the final score</b><div class="sub mono">test_05_game_over_ads::test_game_over_screen_shows_final_score</div>
+      </td>
+  <td>L4 UI</td>
+  <td>scene</td>
+  <td>P1</td>
+  <td class="num">36.8s</td>
+  <td class="mono small ev">score=1 · ready=9.05s · fps=60.7<br>bbbbb1bbb/bb1bbbb1b/1bbb1bbbb/bb1bbb1bb/bbbb1bbb1/b1bbbb1bb/</td>
+  <td><a href="evidence/tests_test_05_game_over_ads_py_test_game_over_screen_shows_final_score/final.png" target="_blank"><img src="evidence/tests_test_05_game_over_ads_py_test_game_over_screen_shows_final_score/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-043</td>
+  <td><b>PLAY on Game Over starts a fresh game (image tier)</b><div class="sub mono">test_05_game_over_ads::test_play_again_by_image_starts_fresh_game</div>
+      </td>
+  <td>L4 UI</td>
+  <td>image</td>
+  <td>P1</td>
+  <td class="num">40.1s</td>
+  <td class="mono small ev">score=0 · ready=8.63s · fps=60.9<br>x/x/x/x/x/x/x/x/x l s1,b cross_piece_2-dl,b e5-v,b</td>
+  <td><a href="evidence/tests_test_05_game_over_ads_py_test_play_again_by_image_starts_fresh_game/final.png" target="_blank"><img src="evidence/tests_test_05_game_over_ads_py_test_play_again_by_image_starts_fresh_game/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-013<br>WBJ-TC-050</td>
+  <td><b>Returning player never sees the tutorial again</b><div class="sub mono">test_06_persistence::test_reload_resumes_board_score_and_hand</div>
+      </td>
+  <td>L6 Persistence</td>
+  <td>scene</td>
+  <td>P1</td>
+  <td class="num">29.6s</td>
+  <td class="mono small ev">score=11 · ready=8.1s · fps=60.6<br>bbbbbbbb1/2b6/2bb5/x/x/x/x/x/x l s1,b e2-v,b l3-dl,b</td>
+  <td><a href="evidence/tests_test_06_persistence_py_test_reload_resumes_board_score_and_hand/final.png" target="_blank"><img src="evidence/tests_test_06_persistence_py_test_reload_resumes_board_score_and_hand/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-070</td>
+  <td><b>FPS ≥ 50 avg and heap growth &lt; 25 MB over 12 moves</b><div class="sub mono">test_07_performance::test_fps_and_memory_during_play</div>
+      </td>
+  <td>L10 Performance</td>
+  <td>bridge</td>
+  <td>P1</td>
+  <td class="num">29.5s</td>
+  <td class="mono small ev">score=102 · ready=9.13s · fps=60.8<br>bb1b1bbb1/1b3bb2/3b2b2/bb3bbbb/1b7/x/x/x/x l cross_piece_2-d</td>
+  <td><a href="evidence/tests_test_07_performance_py_test_fps_and_memory_during_play/final.png" target="_blank"><img src="evidence/tests_test_07_performance_py_test_fps_and_memory_during_play/final.png" loading="lazy"></a></td>
+</tr>
+<tr class="passed">
+  <td><span class="pill passed">PASSED</span></td>
+  <td class="mono nw">WBJ-TC-071</td>
+  <td><b>Game payload &lt; 15 MB</b><div class="sub mono">test_07_performance::test_game_payload_size</div>
+      </td>
+  <td>L10 Performance</td>
+  <td>bridge</td>
+  <td>P2</td>
+  <td class="num">9.5s</td>
+  <td class="mono small ev">score=- · ready=9.3s · fps=60.5<br>x/x/x/x/bbbb1bbbb/x/x/x/x l s1,b</td>
+  <td><a href="evidence/tests_test_07_performance_py_test_game_payload_size/final.png" target="_blank"><img src="evidence/tests_test_07_performance_py_test_game_payload_size/final.png" loading="lazy"></a></td>
+</tr>
+</table></div>
+<p class="sub">Evidence per test: final screenshot, bridge snapshot (FEN, score, screens), console errors, blocked ad/analytics requests → <span class="mono">reports/evidence/</span>. JUnit: <span class="mono">reports/junit.xml</span>.</p>
+</div></body></html>
