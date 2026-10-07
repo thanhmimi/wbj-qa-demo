@@ -1,15 +1,15 @@
 {
   "outcome": "passed",
   "timing": {
-    "page_dom_s": 2.34,
-    "frame_attached_s": 2.97,
-    "game_ready_s": 8.63,
+    "page_dom_s": 2.42,
+    "frame_attached_s": 3.03,
+    "game_ready_s": 8.68,
     "ads_closed": 0,
     "launch_retries": 0,
     "via_dashboard": false
   },
   "snapshot": {
-    "fen": "x/x/x/x/x/x/x/x/x l s1,b cross_piece_2-dl,b e5-v,b",
+    "fen": "x/x/x/x/x/x/x/x/x l e2-v,b l1-dl,b l3-dt,b",
     "score": 0,
     "bestScore": 1,
     "targetScore": 100,
@@ -17,7 +17,7 @@
     "tutorialState": "stopped",
     "openScreens": [],
     "isGameOver": false,
-    "fps": 60.9
+    "fps": 60.4
   },
   "drag_retries": 0,
   "console_errors": [
@@ -37,5 +37,5 @@
     "Error: The data does not differ from the previous ones.\n    at ae.validate (https://app-181186.games.s3.yandex.net/sdk/_/v2.5871b227ff69bc337568.js:1:33998)\n    at https://app-181186.games.s3.yandex.net/sdk/_/v2.5871b227ff69bc337568.js:1:38062\n    at Proxy.setData (https://app-181186.games.s3.yandex"
   ],
   "blocked_requests": 12,
-  "captured_at": "2026-10-06 00:22:08"
+  "captured_at": "2026-10-07 12:20:11"
 }
