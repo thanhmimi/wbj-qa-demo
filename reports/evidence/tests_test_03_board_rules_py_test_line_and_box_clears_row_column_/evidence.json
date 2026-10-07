@@ -1,9 +1,9 @@
 {
   "outcome": "passed",
   "timing": {
-    "page_dom_s": 2.73,
-    "frame_attached_s": 3.86,
-    "game_ready_s": 10.04,
+    "page_dom_s": 2.32,
+    "frame_attached_s": 3.46,
+    "game_ready_s": 9.11,
     "ads_closed": 0,
     "launch_retries": 0,
     "via_dashboard": false
@@ -35,5 +35,5 @@
     "Failed to load resource: net::ERR_FAILED"
   ],
   "blocked_requests": 12,
-  "captured_at": "2026-10-06 00:17:37"
+  "captured_at": "2026-10-07 12:19:30"
 }
