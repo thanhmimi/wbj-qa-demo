@@ -1,5 +1,7 @@
 # Wood Block Journey — QA demo (analysis → test cases → automation)
 
+> **▶ Presentation (works in the GitHub app): [PRESENTATION.md](PRESENTATION.md)** · PDF: [docs/WBJ_QA_Demo_slides.pdf](docs/WBJ_QA_Demo_slides.pdf)
+
 A small, end-to-end run of the proposed QA framework on a live Sun.Studio game:
 **Wood Block Journey** (HTML5 / Phaser 3, Playhop–Yandex Games; the same bundle carries the FB Instant path).
 
